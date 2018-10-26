@@ -4,7 +4,7 @@ title: Le Wagon - Middleman
 
 <div id="home">
   <div class="home-content">
-    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+    <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('images/paris.jpg');">
       <div class="banner-content">
         <h1>Le Wagon Berlin</h1>
         <p>Learn to code with us in Berlin</p>
@@ -21,10 +21,24 @@ title: Le Wagon - Middleman
         </form>
       </div>
     </div>
+
     <div class="container">
       <div class="row">
+        <% data.flats.each do |flat| %>
+        <div class="col-md-4">
+          <div class="card" style="background-image: url('<%= flat.image_path %>');">
+            <h2><%= flat.name %></h2>
+            <p><%= flat.city_name.capitalize %></p>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <!-- <div class="container">
+      <div class="row">
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/paris.jpg');">
             <div class="card-category">Popular</div>
             <div class="card-description">
               <h2>Le Wagon Shanghai</h2>
@@ -35,6 +49,6 @@ title: Le Wagon - Middleman
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
